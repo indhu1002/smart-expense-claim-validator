@@ -1,0 +1,98 @@
+[
+  {
+    "claimId": "DEMO-001",
+    "employee": "Asha Demo",
+    "category": "MEALS",
+    "amount": "750.00",
+    "scenario": "Valid client-meeting lunch",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-002",
+    "employee": "Ravi Demo",
+    "category": "TRAVEL",
+    "amount": "3200.00",
+    "scenario": "Valid business trip",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-003",
+    "employee": "Mira Demo",
+    "category": "HOTEL",
+    "amount": "6800.00",
+    "scenario": "Valid overnight stay",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-004",
+    "employee": "Dev Demo",
+    "category": "OFFICE",
+    "amount": "1200.00",
+    "scenario": "Valid office supplies",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-005",
+    "employee": "Neha Demo",
+    "category": "MEALS",
+    "amount": "1000.00",
+    "scenario": "Valid meal at policy limit",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-006",
+    "employee": "Arjun Demo",
+    "category": "TRAVEL",
+    "amount": "5000.00",
+    "scenario": "Valid travel at policy limit",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-007",
+    "employee": "Kiran Demo",
+    "category": "HOTEL",
+    "amount": "9500.00",
+    "scenario": "Hotel exceeds INR 8000 limit",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-008",
+    "employee": "Sana Demo",
+    "category": "TRAVEL",
+    "amount": "450.00",
+    "scenario": "Receipt reference missing",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-009",
+    "employee": "Isha Demo",
+    "category": "MEALS",
+    "amount": "500.00",
+    "scenario": "Future expense date",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-010",
+    "employee": "Vikram Demo",
+    "category": "OFFICE",
+    "amount": "850.00",
+    "scenario": "Expense older than 90 days",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-011",
+    "employee": "Priya Demo",
+    "category": "OFFICE",
+    "amount": "600.00",
+    "scenario": "Duplicate receipt - first copy",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-012",
+    "employee": "Priya Demo",
+    "category": "OFFICE",
+    "amount": "600.00",
+    "scenario": "Duplicate receipt - second copy",
+    "expected": "FLAGGED"
+  }
+]

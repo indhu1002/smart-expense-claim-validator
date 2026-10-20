@@ -1,0 +1,12 @@
+{
+  "name": "smart-expense-claim-validator-ui",
+  "version": "1.1.2",
+  "private": true,
+  "description": "SAP Fiori Elements frontend for the ABAP expense validator",
+  "scripts": {
+    "build": "ui5 build --dest dist"
+  },
+  "devDependencies": {
+    "@ui5/cli": "4.0.71"
+  }
+}

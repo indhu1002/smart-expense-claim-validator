@@ -1,0 +1,150 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "zind10.expense",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.1.2"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zzui_expense_o4i10/srvd/sap/zzui_expense_o4i10/0001/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "ZIND10Expense-display": {
+          "semanticObject": "ZIND10Expense",
+          "action": "display",
+          "title": "{{appTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "deviceTypes": {
+      "desktop": true,
+      "phone": true,
+      "tablet": true
+    },
+    "icons": {
+      "favIcon": "",
+      "icon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "technology": "UI5"
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "resources": {
+      "css": []
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "dependencies": {
+      "minUI5Version": "1.148.10",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "zind10.expense.i18n.i18n"
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ClaimList",
+          "target": "ClaimList"
+        },
+        {
+          "pattern": "Claim({key}):?query:",
+          "name": "ClaimObjectPage",
+          "target": "ClaimObjectPage"
+        }
+      ],
+      "targets": {
+        "ClaimList": {
+          "type": "Component",
+          "id": "ClaimList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/Claim",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              },
+              "variantManagement": "None",
+              "navigation": {
+                "Claim": {
+                  "detail": {
+                    "route": "ClaimObjectPage"
+                  }
+                }
+              },
+              "initialLoad": "Enabled"
+            }
+          }
+        },
+        "ClaimObjectPage": {
+          "type": "Component",
+          "id": "ClaimObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "contextPath": "/Claim",
+              "editableHeaderContent": false,
+              "navigation": {},
+              "controlConfiguration": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "archeType": "transactional",
+    "registrationIds": []
+  }
+}

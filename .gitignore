@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.dpapi
+*.log
+*.zip
+work/
+backups/
+.DS_Store
+Thumbs.db
