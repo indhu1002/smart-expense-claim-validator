@@ -37,6 +37,8 @@ flowchart LR
 - Backend role and ownership checks, including a prohibition on self-review.
 - Owners see their claims; assigned reviewers see the review queue through CDS access control.
 - Fixed responsive header, clickable project logo, and SAP logout link.
+- Clear filter values with the **Clear** button, then select **Go** to refresh results.
+- Simplified filters hide the technical Editing Status selector and Adapt Filters button while preserving RAP draft handling.
 - ABAP Unit tests for policy and authorization decisions.
 
 ## Example policy
@@ -59,7 +61,7 @@ Amounts must be positive, currency must be INR, dates cannot be in the future, a
 | `fiori-ui/package.json` | UI build command and dependency |
 | `docs/SETUP.md` | Setup sequence, object dependencies, and access configuration |
 | `docs/VERIFICATION.md` | Recorded verification and practical limits |
-| `docs/demo-scenarios.json` | Twelve fictional review scenarios |
+| `docs/demo-scenarios.json` | Twenty-two fictional review scenarios |
 
 ## Build the UI
 
@@ -84,6 +86,8 @@ A SAP Universal ID alone does not grant access to an ABAP tenant. Users require 
 
 On 20 October 2026, the development system was populated with 12 fictional claims: six policy-valid and six with policy issues. The real RAP Validate, Approve, and Reject handlers were exercised under the reviewer identity. Test decisions were rolled back, leaving all 12 claims NEW for manual review at that time.
 
-The synthetic `DEMO_EMPxx` owners are demo fixture identifiers, not provisioned login accounts. The retained `ZCL_IND10_DEMO_RESET` class is read-only; it cannot delete or reseed claims.
+Version 1.2.0 adds ten more fictional claims, `DEMO-013` through `DEMO-022`: four policy-valid and six with policy issues. The append operation preserved all 13 existing claims and their review decisions, bringing the development system to 23 claims. Validation checks were rolled back, leaving the ten additions NEW for manual review.
+
+The synthetic `DEMO_EMPxx` owners are demo fixture identifiers, not provisioned login accounts. The retained `ZCL_IND10_DEMO_RESET` class is read-only; it cannot delete or reseed claims. The guarded `ZCL_IND10_DEMO_ADD10` class only appends its ten fixtures and refuses to run if any of their claim IDs already exist.
 
 See [verification details](docs/VERIFICATION.md). This is a learning project: it does not include OCR, AI classification, payments, anonymous signup, or production-grade multi-tenant onboarding.

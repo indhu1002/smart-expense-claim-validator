@@ -25,6 +25,17 @@ Logout navigation was tested; actual identity-provider session termination was n
 
 Synthetic owners are fixtures, not real users. This verification proves reviewer handlers can operate on another owner’s fixtures; it does not prove a second real SAP account was successfully provisioned.
 
+## Version 1.2.0 — 20 October 2026
+
+- UI5 production build succeeded and SAP confirmed successful UI5 repository upload.
+- The live filter bar shows Clear and omits Editing Status and Adapt Filters.
+- Filtering Category to TRAVEL showed five matching claims. Clear removed the category condition; Go restored all 23 claims.
+- Ten new fixtures, DEMO-013 through DEMO-022, were appended without deleting or updating any of the 13 existing claims or their review decisions.
+- The append routine activated successfully. It compared all existing claim and draft fields before commit.
+- Live RAP validation returned four READY and six FLAGGED results with zero failed actions.
+- Validation test changes were rolled back; all ten new claims remained NEW.
+- Application cache busting is enabled for subsequent frontend resource updates.
+
 ## Known limits
 
 - Sources are snapshots rather than an automatic abapGit installation.

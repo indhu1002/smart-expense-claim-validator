@@ -94,5 +94,85 @@
     "amount": "600.00",
     "scenario": "Duplicate receipt - second copy",
     "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-013",
+    "employee": "Leela Demo",
+    "category": "MEALS",
+    "amount": "650.00",
+    "scenario": "Valid team lunch",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-014",
+    "employee": "Omar Demo",
+    "category": "TRAVEL",
+    "amount": "2400.00",
+    "scenario": "Valid business travel",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-015",
+    "employee": "Tara Demo",
+    "category": "HOTEL",
+    "amount": "8000.00",
+    "scenario": "Hotel at policy limit",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-016",
+    "employee": "Nikhil Demo",
+    "category": "OFFICE",
+    "amount": "2000.00",
+    "scenario": "Office supplies at policy limit",
+    "expected": "READY"
+  },
+  {
+    "claimId": "DEMO-017",
+    "employee": "Zoya Demo",
+    "category": "MEALS",
+    "amount": "1350.00",
+    "scenario": "Meal exceeds INR 1000 limit",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-018",
+    "employee": "Aman Demo",
+    "category": "TRAVEL",
+    "amount": "6100.00",
+    "scenario": "Travel exceeds INR 5000 limit",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-019",
+    "employee": "Rhea Demo",
+    "category": "OFFICE",
+    "amount": "750.00",
+    "scenario": "Missing receipt reference",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-020",
+    "employee": "Kabir Demo",
+    "category": "HOTEL",
+    "amount": "4500.00",
+    "scenario": "Future expense date",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-021",
+    "employee": "Anaya Demo",
+    "category": "OFFICE",
+    "amount": "450.00",
+    "scenario": "Duplicate receipt first copy",
+    "expected": "FLAGGED"
+  },
+  {
+    "claimId": "DEMO-022",
+    "employee": "Anaya Demo",
+    "category": "OFFICE",
+    "amount": "450.00",
+    "scenario": "Duplicate receipt second copy",
+    "expected": "FLAGGED"
   }
 ]

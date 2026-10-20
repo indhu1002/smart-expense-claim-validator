@@ -53,7 +53,9 @@ Check `fiori-ui/webapp/manifest.json`: its relative OData path must match the se
 /sap/bc/ui5_ui5/sap/zind10_exp_ui/index.html?sap-client=100&sap-ui-language=EN
 ```
 
-The UI bootstrap uses the hosting SAP system's UI5 resources. The logout link uses `/sap/public/bc/icf/logoff`; identity-provider session behavior depends on the hosting system.
+The UI bootstrap uses the hosting SAP system's UI5 resources and enables application cache busting so deployments load updated resources. The logout link uses `/sap/public/bc/icf/logoff`; identity-provider session behavior depends on the hosting system.
+
+The local annotation file hides the technical draft Editing Status filter. The list controller extension hides Adapt Filters through the filter control's public setter. The manifest enables the standard Clear button; select Go after clearing to refresh results. RAP draft behavior and backend authorization remain active.
 
 ## 6. Verify before demonstrating
 
@@ -61,4 +63,6 @@ Run the policy tests located in the local implementation include of `ZCL_IND10_E
 
 Check claim creation, owner visibility, assigned reviewer visibility, self-review rejection, policy failures, approval locking, and rejection/resubmission using provisioned accounts where available.
 
-The older `ZCL_IND10_EXPENSE_DEMO` loader creates six claims owned by its executing user; that same user cannot review them under the current self-review rule. The twelve scenarios in `docs/demo-scenarios.json` describe the separately prepared development fixtures. No destructive reset script or personal claim backup is included in this repository.
+The older `ZCL_IND10_EXPENSE_DEMO` loader creates six claims owned by its executing user; that same user cannot review them under the current self-review rule. The 22 scenarios in `docs/demo-scenarios.json` describe separately prepared development fixtures. No destructive reset script or personal claim backup is included in this repository.
+
+For the ten additional fixtures only, create and activate `ZCL_IND10_DEMO_ADD10`. Replace its `CB0000000000` guard with the verified technical ID of the authorized project reviewer. Run it as an ADT console application in a development system. It refuses to insert if any ID from `DEMO-013` through `DEMO-022` already exists, appends ten NEW claims, verifies existing claims and drafts were preserved, and exercises validation with rollback of test decisions. It does not provision the synthetic fixture owners as SAP accounts.
